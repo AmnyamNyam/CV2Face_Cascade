@@ -34,8 +34,6 @@ for filename in os.listdir(directory_path):
 
         # Сохранение изображения с разметкой
         plt.imshow(img)
-        new_filename = (filename + 'Rectangle.png')
-        plt.savefig(new_filename)
-
+        new_filename = fm.save_file(filename)
         # Перемещаем обработанное изображение в созданную нами ранее папку
         fm.file_transfer(new_filename,new_folder_name)

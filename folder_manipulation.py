@@ -1,6 +1,7 @@
 import os
 import random
 import shutil
+import matplotlib.pyplot as plt
 
 def create_unique_folder(base_folder_name):
     # Генерируем случайный символ
@@ -32,3 +33,19 @@ def file_transfer(new_filename,new_folder_name):
 
     # Перемещение файла
     shutil.move(source,destination)
+
+def save_file(filename):
+    # Замените или добавьте нужные вам расширения файлов
+    if filename.endswith('.jpg'):
+        new_filename = (filename + 'Cascade.jpg')
+        plt.savefig(new_filename)
+    elif filename.endswith('.png'):
+        new_filename = (filename + 'Cascade.png')
+        plt.savefig(new_filename)
+    elif filename.endswith('.jpeg'):
+        new_filename = (filename + 'Cascade.jpeg')
+        plt.savefig(new_filename)
+    else:
+        new_filename = (filename + 'Cascade.png')
+        plt.savefig(new_filename)
+    return new_filename
